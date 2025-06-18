@@ -1,6 +1,6 @@
 # Authentication-page
 
-https://internshipghauth.netlify.app/
+https://internshipghauthpage.netlify.app/
 
 live preview
 
