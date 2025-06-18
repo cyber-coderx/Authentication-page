@@ -1,0 +1,830 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>internshipgh Login Page</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #d1e1ea;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    main {
+      max-width: 900px;
+      width: 100%;
+      background: white;
+      display: flex;
+      border-radius: 0.375rem;
+      box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+      overflow: hidden;
+      flex-direction: column;
+    }
+    @media (min-width: 768px) {
+      main {
+        flex-direction: row;
+      }
+    }
+    section[aria-label="Promotional image and headline"] {
+      flex-basis: 60%;
+      background-color: #f5f8fa;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      order: 1;
+    }
+    section[aria-label="Promotional image and headline"] h1 {
+      color: #0f1e2e;
+      font-weight: 600;
+      font-size: 1.5rem;
+      line-height: 1.2;
+      margin-bottom: 2.5rem;
+      max-width: 20rem;
+      text-align: center;
+    }
+    @media (min-width: 768px) {
+      section[aria-label="Promotional image and headline"] h1 {
+        font-size: 1.875rem;
+        max-width: 24rem;
+        text-align: left;
+      }
+    }
+    section[aria-label="Promotional image and headline"] h1 span {
+      font-weight: 700;
+    }
+    .hex-container {
+      position: relative;
+      width: 16rem;
+      height: 16rem;
+    }
+    @media (min-width: 768px) {
+      .hex-container {
+        width: 20rem;
+        height: 20rem;
+      }
+    }
+    .hex-image {
+      position: absolute;
+      border-radius: 20%;
+      clip-path: polygon(
+        25% 6.7%,
+        75% 6.7%,
+        100% 50%,
+        75% 93.3%,
+        25% 93.3%,
+        0% 50%
+      );
+      object-fit: cover;
+    }
+    .center-hex {
+      top: 50%;
+      left: 50%;
+      width: 16rem;
+      height: 16rem;
+      transform: translate(-50%, -50%);
+    }
+.center-hedx {
+      top: 15%;
+      left: 5%;
+      width: 4rem;
+      height: 4rem;
+      transform: translate(-50%, -50%);
+    }
+	.center-hecx {
+      top: 85%;
+      left: 95%;
+      width: 4rem;
+      height: 4rem;
+      transform: translate(-50%, -50%);
+    }
+	.center-hebx {
+      top: 37%;
+      left: -10%;
+      width: 4rem;
+      height: 4rem;
+      transform: translate(-50%, -50%);
+    }
+	.center-heax {
+      top: 63%;
+      left: 109%;
+      width: 4rem;
+      height: 4rem;
+      transform: translate(-50%, -50%);
+    }
+    @media (min-width: 768px) {
+      .center-hex {
+        width: 20rem;
+        height: 20rem;
+      }
+    }
+    .top-right-hex {
+      top: 2.5rem;
+      right: 2.5rem;
+      width: 6rem;
+      height: 6rem;
+    }
+    .middle-right-hex {
+      top: 9rem;
+      right: 5rem;
+      width: 6rem;
+      height: 6rem;
+    }
+    .bottom-left-hex {
+      bottom: 5rem;
+      left: 4rem;
+      width: 4rem;
+      height: 4rem;
+    }
+    .bottom-left-small-hex {
+      bottom: 2.5rem;
+      left: 2rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    .hex-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      fill: none;
+      stroke: #d1e1ea;
+      stroke-width: 1;
+    }
+    section[aria-label="Login panel"] {
+      flex-basis: 40%;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      order: 2;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .brand-name {
+      color: #b33a2f;
+      font-weight: 600;
+      font-size: 1.125rem;
+    }
+    .login-heading {
+      color: #b33a2f;
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .login-subheading {
+      color: #4a4a4a;
+      font-weight: 400;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+    }
+    .login-text {
+      color: #6b6b6b;
+      font-size: 0.75rem;
+      margin-bottom: 1.5rem;
+      max-width: 20rem;
+    }
+    form {
+      max-width: 20rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      border: 1px solid #d9d9d9;
+      border-radius: 0.375rem;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+      color: #000;
+      outline-offset: 2px;
+      outline-color: transparent;
+      transition: outline-color 0.2s ease;
+    }
+    input::placeholder {
+      color: #bfbfbf;
+    }
+    input:focus {
+      outline-color: #b33a2f;
+      outline-style: solid;
+      outline-width: 1px;
+    }
+    .password-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .password-wrapper input {
+      flex: 1;
+      padding-right: 2.5rem;
+    }
+    .password-toggle {
+      position: absolute;
+      right: 0.75rem;
+      cursor: pointer;
+      color: #b33a2f;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      top: 0;
+      font-size: 1rem;
+    }
+    .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: #b33a2f;
+      margin-bottom: 1rem;
+    }
+    .options label {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      cursor: pointer;
+      user-select: none;
+    }
+    .options input[type="checkbox"] {
+      width: 1rem;
+      height: 1rem;
+      border: 1px solid #b33a2f;
+      accent-color: #b33a2f;
+      cursor: pointer;
+      margin: 0;
+    }
+    .reset-password {
+      background: none;
+      border: none;
+      color: #b33a2f;
+      text-decoration: underline;
+      cursor: pointer;
+      padding: 0;
+      font-size: 0.75rem;
+      font-family: inherit;
+    }
+    .reset-password:hover {
+      color: #7a1f17;
+    }
+    .submit-button {
+      width: 100%;
+      background-color: #b33a2f;
+      color: white;
+      font-weight: 600;
+      padding: 0.5rem 0;
+      border: none;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      font-size: 1rem;
+    }
+    .submit-button:hover {
+      background-color: #7a1f17;
+    }
+    .footer-text {
+      font-size: 0.75rem;
+      color: #4a4a4a;
+      margin-top: 1.5rem;
+      max-width: 20rem;
+    }
+    #message-box {
+      position: fixed;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 90vw;
+      background-color: #f8d7da;
+      color: #842029;
+      border: 1px solid #f5c2c7;
+      border-radius: 0.375rem;
+      padding: 1rem 1.5rem;
+      display: none;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+    }
+    #message-box.success {
+      background-color: #d1e7dd;
+      color: #0f5132;
+      border-color: #badbcc;
+    }
+    #message-box ul {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+  <main role="main">
+    <section aria-label="Promotional image and headline">
+      <h1>
+        Set Your <span>Partner</span><br />
+        Recruitment on Auto-Pilot
+      </h1>
+      <div class="hex-container" aria-hidden="true">
+        <img
+          src="https://storage.googleapis.com/a1aa/image/443ce733-7199-423c-27bf-d5317369ddcb.jpg"
+          alt="Excited woman in white top inside a hexagonal shape"
+          class="hex-image center-hex"
+          width="320"
+          height="320"
+          decoding="async"
+          loading="lazy"
+        />
+       
+        <img
+          src="https://storage.googleapis.com/a1aa/image/d6c5a5da-3217-48a9-9111-c5b4336e9ac6.jpg"
+          alt="Excited woman in white top inside a hexagonal shape"
+          class="hex-image center-hedx"
+          width="320"
+          height="320"
+          decoding="async"
+          loading="lazy"
+        />
+        <img
+          src="https://storage.googleapis.com/a1aa/image/70c8103c-8237-4062-2b10-b24e069f520a.jpg"
+          alt="Excited woman in white top inside a hexagonal shape"
+          class="hex-image center-hecx"
+          width="320"
+          height="320"
+          decoding="async"
+          loading="lazy"
+        />
+        <img
+          src="https://storage.googleapis.com/a1aa/image/74e4373d-2de2-4f4d-2d2a-362cf812ba81.jpg"
+          alt="Excited woman in white top inside a hexagonal shape"
+          class="hex-image center-hebx"
+          width="320"
+          height="320"
+          decoding="async"
+          loading="lazy"
+        />
+        <img
+          src="https://storage.googleapis.com/a1aa/image/88618557-c1c7-4330-ebda-73611098d058.jpg"
+          alt="Excited woman in white top inside a hexagonal shape"
+          class="hex-image center-heax"
+          width="320"
+          height="320"
+          decoding="async"
+          loading="lazy"
+        />
+      </div>
+    </section>
+    <section aria-label="Login panel">
+      <div id="login-content">
+        <div aria-label="Grovia brand" class="brand">
+          <span class="brand-name">Internship Gh</span>
+        </div>
+        <h1 class="login-heading">Login</h1>
+        <h2 class="login-subheading">Login to your account</h2>
+        <p class="login-text">
+          Thank you for your trust in Internship Gh, lets access our the best recruitment technology for you
+        </p>
+        <form id="login-form" novalidate>
+          <input
+            aria-label="Email or Phone Number"
+            type="text"
+            placeholder="Email or Phone Number"
+            id="login-email-phone"
+            required
+            autocomplete="username"
+          />
+          <div class="password-wrapper">
+            <input
+              aria-label="Password"
+              type="password"
+              placeholder="Password"
+              id="login-password"
+              required
+              autocomplete="current-password"
+            />
+            <span
+              role="button"
+              tabindex="0"
+              aria-label="Toggle password visibility"
+              class="password-toggle"
+              id="login-toggle-password-visibility"
+            >
+              <i class="fas fa-eye" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div class="options">
+            <label>
+              <input type="checkbox" />
+              Remember me
+            </label>
+            <button type="button" class="reset-password" aria-label="Reset Password" id="reset-password-link">
+              Reset Password?
+            </button>
+          </div>
+          <button type="submit" class="submit-button">SIGN IN</button>
+        </form>
+      </div>
+      <div id="signup-content" style="display:none;">
+        <div aria-label="Grovia brand" class="brand">
+          <span class="brand-name">Internship Gh</span>
+        </div>
+        <h1 class="login-heading">Sign Up</h1>
+        <h2 class="login-subheading">Create your account</h2>
+        <p class="login-text">
+          Join internshipgh today and access the best recruitment technology for your career.
+        </p>
+        <form id="signup-form" novalidate>
+          <input
+            aria-label="Full Name"
+            type="text"
+            placeholder="Full Name"
+            id="signup-fullname"
+            required
+            autocomplete="name"
+          />
+          <input
+            aria-label="Email"
+            type="email"
+            placeholder="Email"
+            id="signup-email"
+            required
+            autocomplete="email"
+          />
+          <input
+            aria-label="Phone Number"
+            type="text"
+            placeholder="Phone Number"
+            id="signup-phone"
+            required
+            autocomplete="tel"
+          />
+          <div class="password-wrapper">
+            <input
+              aria-label="Password"
+              type="password"
+              placeholder="Password"
+              id="signup-password"
+              required
+              autocomplete="new-password"
+            />
+            <span
+              role="button"
+              tabindex="0"
+              aria-label="Toggle password visibility"
+              class="password-toggle"
+              id="signup-toggle-password-visibility"
+            >
+              <i class="fas fa-eye" aria-hidden="true"></i>
+            </span>
+          </div>
+          <button type="submit" class="submit-button">SIGN UP</button>
+        </form>
+      </div>
+      <div id="reset-password-content" style="display:none;">
+        <div aria-label="Grovia brand" class="brand">
+          <span class="brand-name">Internship Gh</span>
+        </div>
+        <h1 class="login-heading">Reset Password</h1>
+        <h2 class="login-subheading">Enter your email to reset password</h2>
+        <p class="login-text">
+          We will send you an email with instructions to reset your password.
+        </p>
+        <form id="reset-password-form" novalidate>
+          <input
+            aria-label="Email"
+            type="email"
+            placeholder="Email"
+            id="reset-email"
+            required
+            autocomplete="email"
+          />
+          <input
+            aria-label="New Password"
+            type="password"
+            placeholder="New Password"
+            id="reset-new-password"
+            required
+            autocomplete="new-password"
+            style="display: none;"
+          />
+          <button type="submit" class="submit-button">SEND RESET LINK</button>
+        </form>
+      </div>
+      <p class="footer-text" id="toggle-text">
+        Don't have an account yet?
+        <a href="#" aria-label="Join Grovia Now!" id="toggle-link">Join internshipGh Now!</a>
+      </p>
+    </section>
+  </main>
+
+  <div id="message-box" role="alert" aria-live="assertive" aria-atomic="true" tabindex="-1"></div>
+
+  <script>
+    const loginContent = document.getElementById('login-content');
+    const signupContent = document.getElementById('signup-content');
+    const resetPasswordContent = document.getElementById('reset-password-content');
+    const toggleText = document.getElementById('toggle-text');
+    const messageBox = document.getElementById('message-box');
+    let messageTimeout = null;
+
+    function showLogin() {
+      loginContent.style.display = 'block';
+      signupContent.style.display = 'none';
+      resetPasswordContent.style.display = 'none';
+      updateToggleText('login');
+      clearMessage();
+    }
+
+    function showSignup() {
+      loginContent.style.display = 'none';
+      signupContent.style.display = 'block';
+      resetPasswordContent.style.display = 'none';
+      updateToggleText('signup');
+      clearMessage();
+    }
+
+    function showResetPassword() {
+      loginContent.style.display = 'none';
+      signupContent.style.display = 'none';
+      resetPasswordContent.style.display = 'block';
+      updateToggleText('reset');
+      clearMessage();
+    }
+
+    function updateToggleText(state) {
+      if(state === 'login') {
+        toggleText.innerHTML = 'Don\'t have an account yet? <a href="#" aria-label="Join Internship Gh Now!" id="toggle-link">Join InternshipGh Now!</a>';
+      } else if(state === 'signup') {
+        toggleText.innerHTML = 'Already have an account? <a href="#" aria-label="Sign In Now!" id="toggle-link">Sign In Now!</a>';
+      } else if(state === 'reset') {
+        toggleText.innerHTML = 'Remembered your password? <a href="#" aria-label="Sign In Now!" id="toggle-link">Sign In Now!</a>';
+      }
+      attachToggleLinkListener();
+    }
+
+    function attachToggleLinkListener() {
+      const toggleLink = document.getElementById('toggle-link');
+      if (toggleLink) {
+        toggleLink.removeEventListener('click', toggleLinkHandler);
+        toggleLink.addEventListener('click', toggleLinkHandler);
+      }
+    }
+
+    function toggleLinkHandler(e) {
+      e.preventDefault();
+      if (loginContent.style.display === 'block') {
+        showSignup();
+      } else {
+        showLogin();
+      }
+    }
+
+    // Initial attach
+    attachToggleLinkListener();
+
+    // Reset password link
+    const resetPasswordLink = document.getElementById('reset-password-link');
+    resetPasswordLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      showResetPassword();
+    });
+
+    // Password visibility toggle function
+    function setupPasswordToggle(toggleId, inputId) {
+      const toggleBtn = document.getElementById(toggleId);
+      const input = document.getElementById(inputId);
+      if (!toggleBtn || !input) return;
+
+      function togglePasswordVisibility() {
+        const isPassword = input.type === 'password';
+        input.type = isPassword ? 'text' : 'password';
+        const icon = toggleBtn.querySelector('i');
+        if (isPassword) {
+          icon.classList.remove('fa-eye');
+          icon.classList.add('fa-eye-slash');
+        } else {
+          icon.classList.remove('fa-eye-slash');
+          icon.classList.add('fa-eye');
+        }
+      }
+
+      toggleBtn.addEventListener('click', togglePasswordVisibility);
+      toggleBtn.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+          e.preventDefault();
+          togglePasswordVisibility();
+        }
+      });
+    }
+
+    setupPasswordToggle('login-toggle-password-visibility', 'login-password');
+    setupPasswordToggle('signup-toggle-password-visibility', 'signup-password');
+
+    // Show message function (error or success)
+    function showMessage(type, messages) {
+      clearTimeout(messageTimeout);
+      messageBox.className = '';
+      messageBox.classList.add(type === 'error' ? 'error' : 'success');
+      if (Array.isArray(messages)) {
+        const ul = document.createElement('ul');
+        messages.forEach(msg => {
+          const li = document.createElement('li');
+          li.textContent = msg;
+          ul.appendChild(li);
+        });
+        messageBox.innerHTML = '';
+        messageBox.appendChild(ul);
+      } else {
+        messageBox.textContent = messages;
+      }
+      messageBox.style.display = 'block';
+      messageBox.focus();
+
+      messageTimeout = setTimeout(() => {
+        clearMessage();
+      }, 5000);
+    }
+
+    function clearMessage() {
+      messageBox.style.display = 'none';
+      messageBox.innerHTML = '';
+      messageBox.className = '';
+      clearTimeout(messageTimeout);
+    }
+
+    // Validation helpers
+    function validateLogin() {
+      const emailPhone = document.getElementById('login-email-phone').value.trim();
+      const password = document.getElementById('login-password').value.trim();
+      const errors = [];
+      if (!emailPhone) errors.push('Email or Phone Number is required.');
+      if (!password) errors.push('Password is required.');
+      return errors;
+    }
+
+    function validateSignup() {
+      const fullname = document.getElementById('signup-fullname').value.trim();
+      const email = document.getElementById('signup-email').value.trim();
+      const phone = document.getElementById('signup-phone').value.trim();
+      const password = document.getElementById('signup-password').value.trim();
+      const errors = [];
+      if (!fullname) errors.push('Full Name is required.');
+      if (!email) errors.push('Email is required.');
+      if (!phone) errors.push('Phone Number is required.');
+      if (!password) errors.push('Password is required.');
+      return errors;
+    }
+
+    // Form submit handlers
+    const loginForm = document.getElementById('login-form');
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      clearMessage();
+      const errors = validateLogin();
+      if (errors.length > 0) {
+        showMessage('error', errors);
+      } else {
+        const loginInput = document.getElementById('login-email-phone').value.trim();
+        const password = document.getElementById('login-password').value.trim();
+
+        const userData = localStorage.getItem(loginInput);
+
+        if (!userData) {
+          showMessage('error', 'No user found with this email.');
+          return;
+        }
+
+        const user = JSON.parse(userData);
+
+        if (user.password !== password) {
+          showMessage('error', 'Incorrect password.');
+          return;
+        }
+
+        showMessage('success', `Welcome back, ${user.fullname}!`);
+        loginForm.reset();
+
+        // Reset password toggle icon if needed
+        const passwordInput = document.getElementById('login-password');
+        const toggleBtn = document.getElementById('login-toggle-password-visibility');
+        if (passwordInput.type === 'text') {
+          passwordInput.type = 'password';
+          const icon = toggleBtn.querySelector('i');
+          icon.classList.remove('fa-eye-slash');
+          icon.classList.add('fa-eye');
+        }
+      }
+    });
+
+    const signupForm = document.getElementById('signup-form');
+    signupForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      clearMessage();
+      const errors = validateSignup();
+      if (errors.length > 0) {
+        showMessage('error', errors);
+      } else {
+        const email = document.getElementById('signup-email').value.trim();
+        const phone = document.getElementById('signup-phone').value.trim();
+        const fullname = document.getElementById('signup-fullname').value.trim();
+        const password = document.getElementById('signup-password').value.trim();
+
+        // Check if user already exists
+        const existingUser = localStorage.getItem(email);
+        if (existingUser) {
+          showMessage('error', 'User already exists with this email.');
+          return;
+        }
+
+        const user = { fullname, email, phone, password };
+        localStorage.setItem(email, JSON.stringify(user));
+        showMessage('success', 'Sign up successful! You can now login.');
+        signupForm.reset();
+
+        // Reset password toggle icon if needed
+        const passwordInput = document.getElementById('signup-password');
+        const toggleBtn = document.getElementById('signup-toggle-password-visibility');
+        if (passwordInput.type === 'text') {
+          passwordInput.type = 'password';
+          const icon = toggleBtn.querySelector('i');
+          icon.classList.remove('fa-eye-slash');
+          icon.classList.add('fa-eye');
+        }
+
+        // Switch to login screen after signup
+        setTimeout(showLogin, 1500);
+      }
+    });
+
+    const resetPasswordForm = document.getElementById('reset-password-form');
+    const resetEmailInput = document.getElementById('reset-email');
+    const resetNewPasswordInput = document.getElementById('reset-new-password');
+
+    let resetStage = 1; // 1 = checking email, 2 = submitting new password
+
+    resetPasswordForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      clearMessage();
+
+      if (resetStage === 1) {
+        const email = resetEmailInput.value.trim();
+        const userData = localStorage.getItem(email);
+
+        if (!email) {
+          showMessage('error', 'Email is required.');
+          return;
+        }
+
+        if (!userData) {
+          showMessage('error', 'No user found with this email.');
+          return;
+        }
+
+        // If email is valid, show password field
+        resetEmailInput.disabled = true;
+        resetNewPasswordInput.style.display = 'block';
+        showMessage('success', 'Email found. Now enter your new password.');
+        resetStage = 2;
+      } else if (resetStage === 2) {
+        const email = resetEmailInput.value.trim();
+        const newPassword = resetNewPasswordInput.value.trim();
+
+        if (!newPassword || newPassword.length < 4) {
+          showMessage('error', 'New password must be at least 4 characters.');
+          return;
+        }
+
+        const user = JSON.parse(localStorage.getItem(email));
+        user.password = newPassword;
+        localStorage.setItem(email, JSON.stringify(user));
+
+        showMessage('success', 'Password reset successful!');
+        resetPasswordForm.reset();
+        resetNewPasswordInput.style.display = 'none';
+        resetEmailInput.disabled = false;
+        resetStage = 1;
+
+        // Redirect to login screen after short delay
+        setTimeout(showLogin, 1500);
+      }
+    });
+  </script>
+</body>
+</html>
