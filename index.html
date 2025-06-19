@@ -543,6 +543,11 @@
     const toggleText = document.getElementById('toggle-text');
     const messageBox = document.getElementById('message-box');
     let messageTimeout = null;
+    
+// Redirect if already logged in
+if (localStorage.getItem("status") === "loggedIn") {
+  window.location.href = "dashboard.html";
+}
 
     function showLogin() {
       loginContent.style.display = 'block';
@@ -717,6 +722,21 @@
           showMessage('error', 'Incorrect password.');
           return;
         }
+        
+        
+        
+// Save login status
+    localStorage.setItem("status", "loggedIn");
+    localStorage.setItem("user", loginInput);
+
+    // Redirect
+    window.location.href = "dashboard.html";
+
+
+
+
+        
+        
 
         showMessage('success', `Welcome back, ${user.fullname}!`);
         loginForm.reset();
